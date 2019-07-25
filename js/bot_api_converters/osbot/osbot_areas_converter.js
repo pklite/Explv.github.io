@@ -61,9 +61,9 @@ export class OSBotAreasConverter extends OSBotConverter {
     
     toJavaArray(areas) {
         if (areas.areas.length === 1) {
-            return `${this.javaArea} area = ` + this.toJavaSingle(areas.areas[0]) + `;`;
+            return `${this.javaArea} ${this.javaArea} = ` + this.toJavaSingle(areas.areas[0]) + `;`;
         } else if (areas.areas.length > 1) {
-            var output = `${this.javaArea}[] area = {\n`;
+            var output = `${this.javaArea}[] ${this.javaArea.toLowerCase()} = {\n`;
             for (var i = 0; i < areas.areas.length; i++) {
                 output += "    " + this.toJavaSingle(areas.areas[i]);
                 if (i !== areas.areas.length - 1) {
@@ -79,9 +79,9 @@ export class OSBotAreasConverter extends OSBotConverter {
     
     toJavaList(areas) {
         if (areas.areas.length === 1) {
-            return `${this.javaArea} area = ` + this.toJavaSingle(areas.areas[0]) + ";";
+            return `${this.javaArea} ${this.javaArea} = ` + this.toJavaSingle(areas.areas[0]) + ";";
         } else if (areas.areas.length > 1) {
-            var output = `List&lt;${this.javaArea}&gt; area = new ArrayList<>();\n`;
+            var output = `List&lt;${this.javaArea}&gt; ${this.javaArea.toLowerCase()} = new ArrayList<>();\n`;
             for (var i = 0; i < areas.areas.length; i++) {
                 output += "area.add(" + this.toJavaSingle(areas.areas[i]) + ");\n";
             }
@@ -92,9 +92,9 @@ export class OSBotAreasConverter extends OSBotConverter {
     
     toJavaArraysAsList(areas) {
         if (areas.areas.length === 1) {
-            return `${this.javaArea} area = ` + this.toJavaSingle(areas.areas[0]) + ";";
+            return `${this.javaArea} ${this.javaArea} = ` + this.toJavaSingle(areas.areas[0]) + ";";
         } else if (areas.areas.length > 1) {
-            var output = `List&lt;${this.javaArea}&gt; area = Arrays.asList(\n` +
+            var output = `List&lt;${this.javaArea}&gt; ${this.javaArea.toLowerCase()} = Arrays.asList(\n` +
                 `    new ${this.javaArea}[]{\n`;
             
             for (var i = 0; i < areas.areas.length; i++) {
