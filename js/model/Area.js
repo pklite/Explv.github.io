@@ -7,7 +7,9 @@ export class Area {
     constructor(startPosition, endPosition) {
         this.startPosition = startPosition;
         this.endPosition = endPosition;
+        this.title = null;
     }
+
 
     static fromBounds(map, bounds) {
         return new Area(
@@ -15,6 +17,11 @@ export class Area {
             Position.fromLatLng(map, bounds.getSouthWest()),
             Position.fromLatLng(map, bounds.getNorthEast())
         );
+    }
+
+
+    setTitle(title) {
+        this.title = title;
     }
 
     toLeaflet(map) {
