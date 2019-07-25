@@ -71,7 +71,7 @@ export class RunelitePlusAreasConverter extends OSBotAreasConverter {
         this.javaPosition = "Tile";
 
         return `${this.enumTitle}(\"${area.title}\", new ${this.location}(${area.startPosition.x}, ${area.startPosition.y},
-         ${area.endPosition.x}, ${area.endPosition.y}, ${area.endPosition.z})`;
+         ${area.endPosition.x}, ${area.endPosition.y}), ${area.endPosition.z})`;
 
     }
 }
